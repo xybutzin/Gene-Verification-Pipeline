@@ -16,7 +16,7 @@ This pipeline is designed for reserchers investigating the validity of claimed o
 
 ## Project Directory Structure
 ```
-├── bioinfo_env.yml
+├── bioinfo_short.yml
 ├── data
 │   ├── genome
 │   └── raw
@@ -58,10 +58,32 @@ To set up the environment and install the necessary depencies, follow these step
 
 1. **Install Conda** (if not already installed):
     - Download and install Miniconda or Anaconda
-2. **Create and Activate the Environment:
+2. **Set Channel Priority**
+- Run the following commands to set the channel order and enable channel priority strict
+
 ```
-conda env create -f bioinfo_env.yml
-conda activate bioinfo
+conda config --add channels conda-forge
+conda config --add channels bioconda
+conda config --add channels defaults
+conda config --set channel_priority strict
+```
+    
+- Verify channel order by running:
+
+```
+conda config --show channels
+```
+This should display:
+```
+channels:
+    - conda-forge
+    - bioconda
+    - defaults
+```
+3. **Create and Activate the Environment:
+```
+conda env create -f bioinfo_short.yml
+conda activate bioinfo_short
 ```
 
 ## Usage

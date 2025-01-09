@@ -282,10 +282,10 @@ def parse_blast_result(xml_file, query_faa_file, genome_file, output_txt_file):
     parse blast result in xml file and write to a txt file
     write aligned nt seq to .fna file
     '''
-    print(f"xml_file type: {type(xml_file)}")
-    print(f"query_faa_file type: {type(query_faa_file)}")
-    print(f"genome_file type: {type(genome_file)}")
-    print(f"output_txt_file type: {type(output_txt_file)}")
+    # print(f"xml_file type: {type(xml_file)}")
+    # print(f"query_faa_file type: {type(query_faa_file)}")
+    # print(f"genome_file type: {type(genome_file)}")
+    # print(f"output_txt_file type: {type(output_txt_file)}")
 
     if not isinstance(query_faa_file, Path):
         query_faa_file = Path(query_faa_file)

@@ -1,0 +1,16 @@
+name: bioinfo_short
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - biopython=1.79=py36h8f6f2f9_0
+  - blast=2.15.0=pl5321h6f7f691_1
+  - entrez-direct=22.1=he881be0_0
+  - gffutils=0.9=py36_0
+  - ncbi-datasets-cli=16.22.1=ha770c72_0
+  - ncbi-genome-download=0.3.3=pyh7cba7a3_0
+  - ncbi-vdb=3.1.1=h4ac6f70_0
+  - numpy=1.19.5=py36hfc0c790_2
+  - pandas=1.1.5=py36h284efc9_0
+  - pip=20.0.2=py36_1
+  - python=3.6.15=hb7a2778_0_cpython

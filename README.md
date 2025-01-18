@@ -25,11 +25,6 @@ This pipeline is designed for reserchers investigating the validity of claimed o
 │       └── genome_accession.csv
 ├── helper
 │   ├── __init__.py
-│   ├── __pycache__
-│   │   ├── __init__.cpython-36.pyc
-│   │   ├── __init__.cpython-38.pyc
-│   │   ├── helper.cpython-36.pyc
-│   │   └── helper.cpython-38.pyc
 │   └── helper.py
 ├── results
 │   ├── SRA_search

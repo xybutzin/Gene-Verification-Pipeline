@@ -187,11 +187,13 @@ def extract_genome_accession_from_fasta(fasta_file):
     '''
     record = SeqIO.read(fasta_file, 'fasta')
     description = record.description
-    match = re.search(r"genome:GCF_(\d+)", description)
+    pattern = re.compile(r'genome:(GCF_\d+)')
+    match = re.search(pattern, description)
     if match:
-        return f'GCF_{match.group(1)}'
+        return match.group(1)
     else:
         return None
+    
 
 def extract_genome_accession_from_description(description):
     '''
@@ -200,11 +202,12 @@ def extract_genome_accession_from_description(description):
     Args:
         input is header/description of a fasta_file (e.g. NC_000962.3_7.faa or NC_000962.3_7.fna)
     '''
-    match = re.search(r"genome:GCF_(\d+)", description)
+    pattern = re.compile(r'genome:(GCF_\d+)')
+    match = re.search(pattern, description)
     if match:
-        return f'GCF_{match.group(1)}'
+        return match.group(1)
     else:
-        return None   
+        return None  
 
 def get_accession_with_version_from_csv(genome_csv, accession):
     '''Fetches the accession version for a given GCF_number from the genome csv file'''
@@ -212,7 +215,7 @@ def get_accession_with_version_from_csv(genome_csv, accession):
     try:
         return genome_df.loc[genome_df['genome_accession'] == accession, 'accession_version'].iloc[0]
     except IndexError:
-        print(f"Accession {accession} not found in {genome_file}")
+        print(f"Accession {accession} not found in {genome_csv}")
         return None
 
 

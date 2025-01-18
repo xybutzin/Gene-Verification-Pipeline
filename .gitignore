@@ -1,0 +1,6 @@
+.env
+*.pyc
+*.Zone.Identifier
+*.temp
+.vscode/
+*.log

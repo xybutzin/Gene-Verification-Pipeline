@@ -4,3 +4,4 @@
 *.temp
 .vscode/
 *.log
+__pycache__/

@@ -1,6 +1,7 @@
 name: bioinfo_short
 channels:
   - conda-forge
+  - bioconda
   - defaults
 dependencies:
   - biopython=1.79=py36h8f6f2f9_0

@@ -3,9 +3,12 @@ from pathlib import Path
 import re
 from Bio import SeqIO
 import gffutils
+import sys
+project_dir = Path(__file__).resolve().parent.parent
+sys.path.append(str(project_dir))
+
 from helper.helper import create_gff_db, extract_genome_accession_from_description, parse_blast_result, get_upstream_sequence
 
-project_dir = Path(__file__).resolve().parent.parent
 genome_file_dir = project_dir / 'data' / 'genome'
 xml_file_dir = project_dir / 'results' / 'tblastn'
 query_faa_dir = project_dir / 'data' / 'raw'

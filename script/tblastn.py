@@ -4,9 +4,12 @@ from pathlib import Path
 import pandas as pd
 from Bio import SeqIO
 import subprocess
+import sys
+project_dir = Path(__file__).resolve().parent.parent
+sys.path.append(str(project_dir))
+
 from helper.helper import extract_genome_accession_from_fasta, fetch_exact_accession, run_tblastn
 
-project_dir = Path(__file__).resolve().parent.parent
 faa_file_dir = project_dir / 'data' / 'raw'
 faa_files = faa_file_dir.glob('*.faa')
 tblastn_result_dir = project_dir / 'results' / 'tblastn'

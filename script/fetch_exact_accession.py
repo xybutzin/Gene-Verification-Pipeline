@@ -2,9 +2,12 @@ import os
 from pathlib import Path
 import pandas as pd
 import subprocess
+import sys
+project_dir = Path(__file__).resolve().parent.parent
+sys.path.append(str(project_dir))
+
 from helper.helper import fetch_exact_accession
 
-project_dir = Path(__file__).resolve().parent.parent
 data_dir = project_dir/'data'/'raw'
 genome_file = data_dir/'genome_accession.csv'
 

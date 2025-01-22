@@ -2,9 +2,12 @@ import gzip
 import shutil
 import os
 from pathlib import Path
+import sys
+project_dir = Path(__file__).resolve().parent.parent
+sys.path.append(str(project_dir))
+
 from helper.helper import decompress, rename
 
-project_dir = Path(__file__).resolve().parent.parent
 genome_dir = project_dir/'data'/'genome'
 gz_files = genome_dir.glob('*.gz')
 

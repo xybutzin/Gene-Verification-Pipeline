@@ -2,9 +2,12 @@
 from pathlib import Path
 from Bio import SeqIO
 import subprocess
+import sys
+project_dir = Path(__file__).resolve().parent.parent
+sys.path.append(str(project_dir))
+
 from helper.helper import get_species_strain_name, search_sra_db
 
-project_dir = Path(__file__).resolve().parent.parent
 fna_dir = project_dir / 'results' / 'tblastn'
 res_dir = project_dir / 'results' / 'SRA_search'
 

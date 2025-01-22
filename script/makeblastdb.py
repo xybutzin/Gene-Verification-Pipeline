@@ -1,7 +1,10 @@
 from pathlib import Path
+import sys
+project_dir = Path(__file__).resolve().parent.parent
+sys.path.append(str(project_dir))
+
 from helper.helper import makeblastdb
 
-project_dir = Path(__file__).resolve().parent.parent
 genome_dir = project_dir / 'data' / 'genome'
 
 genome_fna_files = genome_dir.glob('*.fna')
